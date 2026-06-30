@@ -1,0 +1,16 @@
+[Unit]
+Description=Gallery Upload API
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USER
+Environment=GALLERY_UPLOAD_DIR=/srv/image
+Environment=GALLERY_API_KEY_FILE=/home/YOUR_USER/.gallery-api-key
+Environment=GALLERY_PORT=8081
+ExecStart=/usr/bin/python /home/YOUR_USER/gallery-api.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Save to Gallery",
+  "version": "1.0",
+  "description": "Right-click images to save them to your personal gallery",
+  "permissions": ["contextMenus", "storage", "notifications"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
