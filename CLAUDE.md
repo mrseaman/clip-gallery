@@ -1,13 +1,13 @@
-# Personal Gallery
+# Clip Gallery
 
-Self-hosted image gallery with a Chrome extension for saving images from the web.
+Self-hosted image gallery with a Chrome extension for clipping images from the web.
 
 ## Architecture
 
 - **Gallery page** (`gallery/index.html`): Static HTML served by nginx. Reads `files.json` for the image list, renders a responsive grid with lightbox. No build tools or dependencies.
 - **Upload API** (`server/gallery-api.py`): Python 2 `BaseHTTPServer` that accepts image uploads via POST with API key auth. Saves to the upload directory and regenerates `files.json`. Configured via environment variables.
 - **Nginx** (`nginx/image-gallery.conf`): Serves the gallery with HTTP basic auth and rate limiting (5 req/min). Proxies `/image/upload` to the API server without basic auth (uses API key instead). The main site is expected to reverse-proxy `/image` to this backend on port 8080.
-- **Chrome extension** (`extension/`): Manifest V3. Adds "Save to Gallery" to the right-click context menu on images. Fetches the image blob and POSTs it to the configured API endpoint. API URL and key are set in extension options.
+- **Chrome extension** (`extension/`): Manifest V3. Adds "Clip to Gallery" to the right-click context menu on images. Fetches the image blob and POSTs it to the configured API endpoint. API URL and key are set in extension options.
 - **Scripts** (`scripts/`): `setup.sh` handles full deployment (htpasswd, systemd service, nginx config, API key generation). `refresh-gallery.sh` regenerates `files.json` from the upload directory.
 
 ## Environment variables

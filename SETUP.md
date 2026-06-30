@@ -16,7 +16,7 @@
 
 ```bash
 git clone <repo-url>
-cd personal-gallery
+cd clip-gallery
 ```
 
 ### 2. Configure environment (optional)
@@ -39,7 +39,7 @@ This will:
 - Generate a random API key and save it to `~/.gallery-api-key`
 - Create the upload directory with correct permissions
 - Copy the gallery page into the upload directory
-- Prompt you to create a username and password for the gallery web UI
+- Prompt you to create a username and password for the Clip Gallery web UI
 - Install and start the upload API as a systemd service
 - Install the nginx backend config and reload nginx
 
@@ -85,15 +85,15 @@ Visit `https://your-domain.com/image/` in a browser. You should see a login prom
 ### 2. Configure the extension
 
 1. Click the puzzle piece icon in Chrome's toolbar
-2. Find **Save to Gallery** and click the gear icon (or right-click → Options)
+2. Find **Clip Gallery** and click the gear icon (or right-click → Options)
 3. Enter your settings:
-   - **Gallery API URL**: `https://your-domain.com/image/upload`
+   - **Clip Gallery API URL**: `https://your-domain.com/image/upload`
    - **API Key**: the key from the setup script output
 4. Click **Save**
 
 ### 3. Usage
 
-Right-click any image on the web and select **Save to Gallery**. A notification will confirm the save. The image appears in your gallery immediately on page refresh.
+Right-click any image on the web and select **Clip Gallery**. A notification will confirm the save. The image appears in your gallery immediately on page refresh.
 
 ## Maintenance
 

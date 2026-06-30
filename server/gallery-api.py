@@ -90,5 +90,5 @@ class Handler(BaseHTTPServer.BaseHTTPRequestHandler):
 
 if __name__ == "__main__":
     server = BaseHTTPServer.HTTPServer(("127.0.0.1", PORT), Handler)
-    print "Gallery upload API running on port %d" % PORT
+    print "Clip Gallery API running on port %d" % PORT
     server.serve_forever()

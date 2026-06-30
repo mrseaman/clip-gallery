@@ -1,13 +1,13 @@
 chrome.runtime.onInstalled.addListener(() => {
   chrome.contextMenus.create({
-    id: "save-to-gallery",
-    title: "Save to Gallery",
+    id: "clip-to-gallery",
+    title: "Clip to Gallery",
     contexts: ["image"],
   });
 });
 
 chrome.contextMenus.onClicked.addListener(async (info) => {
-  if (info.menuItemId !== "save-to-gallery") return;
+  if (info.menuItemId !== "clip-to-gallery") return;
 
   const { apiUrl, apiKey } = await chrome.storage.sync.get([
     "apiUrl",
@@ -18,8 +18,8 @@ chrome.contextMenus.onClicked.addListener(async (info) => {
     chrome.notifications.create({
       type: "basic",
       iconUrl: "icon128.png",
-      title: "Save to Gallery",
-      message: "Please configure the API URL and key in extension options.",
+      title: "Clip to Gallery",
+      message: "Please configure the API URL and key in Clip Gallery options.",
     });
     return;
   }
@@ -48,7 +48,7 @@ chrome.contextMenus.onClicked.addListener(async (info) => {
       chrome.notifications.create({
         type: "basic",
         iconUrl: "icon128.png",
-        title: "Saved to Gallery",
+        title: "Clipped!",
         message: result.filename,
       });
     } else {

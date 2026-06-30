@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Save to Gallery",
+  "name": "Clip Gallery",
   "version": "1.0",
-  "description": "Right-click images to save them to your personal gallery",
+  "description": "Right-click images to clip them to your Clip Gallery",
   "permissions": ["contextMenus", "storage", "notifications"],
   "host_permissions": ["<all_urls>"],
   "background": {

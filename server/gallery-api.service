@@ -1,5 +1,5 @@
 [Unit]
-Description=Gallery Upload API
+Description=Clip Gallery Upload API
 After=network.target
 
 [Service]
